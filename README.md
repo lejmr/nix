@@ -25,6 +25,11 @@ nix run nix-darwin -- switch --flake ~/.config/nix-darwin
 3. I want to have as much MacOS configruation in Nix as possible, but there are few things that are impossible:
     -  F1-12 are primary instead to multimedia keys
 
+## Why am I missing
+
+- .ssh/config that can be modified via ./ssh/config file and uploaded to git, so it is shared across devices
+- VSCode configuration of pluggins, etc.
+
 
 # Day to day operation
 
