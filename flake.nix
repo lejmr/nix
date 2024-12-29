@@ -14,15 +14,18 @@
       # $ nix-env -qaP | grep wget
       # https://search.nixos.org/packages
       environment.systemPackages =
-        [ 
+        with pkgs; [ 
 	 # CLI goodies
-	  pkgs.vim pkgs.neofetch pkgs.htop pkgs.git pkgs.jq pkgs.mc pkgs.ranger
+	  vim neofetch htop git jq mc ranger
 
 	  #DevOps
-	  pkgs.docker pkgs.colima pkgs.k9s pkgs.kubectl pkgs.kubectx pkgs.awscli
+	  docker colima k9s kubectl kubectx awscli
 
 	  # Python development
-	  pkgs.poetry pkgs.uv pkgs.cargo
+	  poetry uv 
+
+	  # Rust development
+	  cargo rustc rustup rustfmt rust-analyzer cargo-update cargo-geiger cargo-outdated cargo-edit
         ];
       environment.variables = {
 	EDITOR = "vim";
@@ -89,7 +92,7 @@
       programs.zsh.enableFzfCompletion = true;
       programs.zsh.ohMyZsh = {
 	enable = true;
-        theme = "cloud";
+        theme = "robbyrussell";
 	plugins = ["git" "poetry" "kubectl"];
       };
 
