@@ -5,9 +5,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-      };
+  };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs}:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -16,7 +16,7 @@
       environment.systemPackages =
         with pkgs; [ 
 	 # CLI goodies
-	  vim neofetch htop git jq mc ranger
+	  vim neofetch htop git jq mc ranger 
 
 	  #DevOps
 	  docker colima k9s kubectl kubectx awscli
@@ -25,7 +25,8 @@
 	  poetry uv 
 
 	  # Rust development
-	  cargo rustc rustup rustfmt rust-analyzer cargo-update cargo-geiger cargo-outdated cargo-edit
+	  #cargo rustc rustup rustfmt  clippy rust-analyzer cargo-update cargo-geiger cargo-outdated cargo-edit
+	  rustup
         ];
       environment.variables = {
 	EDITOR = "vim";
@@ -101,10 +102,10 @@
 	enable = true;
 	casks = [
 	  # Desktop basics
-	  "1password" "1password-cli" "firefox" "easy-move+resize" "spotify" "synology-drive" "messenger"
+	  "1password" "1password-cli" "firefox" "easy-move+resize" "spotify" "synology-drive" "messenger" "stats"
 	  
 	  # Development tools
-	  "jetbrains-toolbox" "visual-studio-code" "sublime-text"
+	  "jetbrains-toolbox" "visual-studio-code" "sublime-text" "cmake" 
 
 	  # Productivity 
 	  "obsidian"
