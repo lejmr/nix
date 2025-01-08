@@ -22,7 +22,7 @@
 	  docker colima k9s kubectl kubectx awscli
 
 	  # Python development
-	  poetry uv 
+	  poetry uv pre-commit
 
 	  # Rust development
 	  #cargo rustc rustup rustfmt  clippy rust-analyzer cargo-update cargo-geiger cargo-outdated cargo-edit
